@@ -1,0 +1,22 @@
+type MobileApp{
+    version:String
+    name:String!
+    platform: [String]
+    author:Author
+    appId:ID!
+    releasedDate:Date
+    downloaded: NonNegativeInt
+    homePage:Url
+
+}
+
+input MobileAppFilter{
+    name:String
+    version:String
+    platform:String
+    author: AuthorFilter
+}
+
+input AuthorFilter{
+    name:String
+}

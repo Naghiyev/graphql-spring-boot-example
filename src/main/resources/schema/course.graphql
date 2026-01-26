@@ -1,0 +1,29 @@
+scalar Date
+scalar Url
+scalar NonNegativeInt
+scalar DateTime
+
+union SmartSearchResult = Hello | Book
+
+type Query {
+    allHelloes: [Hello]
+    oneHello:Hello
+    oneHelloById(id:Int!):Hello
+    books(author:String): [Book]
+    booksByReleased(releasedInput:ReleaseHistoryInput! ):[Book]
+    mobileApps(mobileAppFilter:MobileAppFilter) :[MobileApp]
+    pets(petFilter: PetFilter): [Pet]
+    smartSearch(keyword: String): [SmartSearchResult]
+    additionalOnRequest: String
+}
+
+type Mutation{
+    addHello(helloInput: HelloInput!): Int
+    replaceHelloText(helloInput: HelloInput!): [Hello]
+    #    replaceHelloText(number: Int!, newText: String!): [Hello]
+    deleteHello(number: Int!): Int
+}
+
+type Subscription {
+  randomStock: Stock
+}
