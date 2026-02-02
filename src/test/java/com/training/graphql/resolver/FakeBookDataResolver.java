@@ -7,7 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 
-@SpringBootTest
+@SpringBootTest(properties = {
+        "spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration," +
+                "org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration"
+})
 public class FakeBookDataResolver {
     @Autowired
     DgsQueryExecutor dgsQueryExecutor;
