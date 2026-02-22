@@ -1,2 +1,15 @@
 server:
-  port: 8083
+  port: 8082
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/problemz
+    username: admin
+    password: admin
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
